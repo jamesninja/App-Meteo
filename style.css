@@ -1,0 +1,19 @@
+body{
+background-color: aqua; /* centrer le texte */
+text-align: center;  /* centrer le texte */
+
+}
+
+.img{
+display: flex;
+justify-content: space-between;
+width: 100%;
+height: 100px;
+margin: 150px;
+
+/* text-align: center; */
+/* margin-left: auto;
+margin-right: auto; */
+/* width: ...; largeur obligatoire pour être centré */
+
+}
