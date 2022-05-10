@@ -4,16 +4,17 @@ text-align: center;  /* centrer le texte */
 
 }
 
-.img{
+/* .img{
 display: flex;
 justify-content: space-between;
 width: 100%;
 height: 100px;
 margin: 150px;
 
-/* text-align: center; */
-/* margin-left: auto;
-margin-right: auto; */
-/* width: ...; largeur obligatoire pour être centré */
+} */
 
+#previsions {
+width: 15%;
+height: 100px;
+margin: 150px;
 }
