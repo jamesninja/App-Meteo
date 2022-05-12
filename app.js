@@ -1,6 +1,18 @@
+
+
+
+
+   const week = ["Sunday", "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    // function chooseDay() {
+    //     let number = document.getElementById("jour-select").value;
+    //         return(number)
+    //   }
+
+
+
 // définition de la fonction qui gere l'affichage ddes jours
 function displayWeatherDay(idMeteo, day) { // meteo correspond à l'id (par ex 300 ou 804 etc...)
-
+    
     const eltPrevisions = document.getElementById("previsions")
     let imgSource= "";
     // const monJour = document.getElementById("jour")
@@ -26,15 +38,18 @@ function displayWeatherDay(idMeteo, day) { // meteo correspond à l'id (par ex 3
         imgSource = "./images/cloudy.svg"   
         //cloudy = nuageux  803 => 804 
     }
-
+    let ajoutDiv = document.createElement("div")
+    ajoutDiv.classList = "leJour"
     let ajoutNomJour = document.createElement("h3")
     let textJour = document.createTextNode(day)
     ajoutNomJour.appendChild(textJour)
-    eltPrevisions.appendChild(ajoutNomJour)
-
+    
     let ajoutImage = document.createElement("img")
     ajoutImage.src = imgSource;
-    eltPrevisions.appendChild(ajoutImage)
+    ajoutDiv.appendChild(ajoutNomJour)
+    ajoutDiv.appendChild(ajoutImage)
+    eltPrevisions.appendChild(ajoutDiv)
+
 
 }
 
@@ -50,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // console.log(document.getElementById('city').value)  /* afficher la valeur de city avec document.getElementById('city').value */
         const ville=document.getElementById("city").value;
-        const week = ["Sunday", "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+        // const week = ["Sunday", "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 
         const API_KEY = "14a3053403244a73b71868a129b81c1e";
         let URL = `https://api.opencagedata.com/geocode/v1/json?q=${ville}&key=${API_KEY}&language=fr&pretty=1`
@@ -92,8 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 let dayNumber = today.getDay();
                 //console.log("dayyyyyyyyyyy "+ dayNumber);//on affiche la valeur du jour entre 0 à 7
 
-
-                for (let i = 0; i < donnee.daily.length; i++) {
+                previsions.innerHTML = "";
+                for (let i = 0; i < document.getElementById("jour-select").value; i++) {
                     // on va tester l'id pour chaque jour
                     //console.log(donnee.daily[i].weather[0].id);
                     let meteo = donnee.daily[i].weather[0].id;
@@ -101,8 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     let dayName = week[(dayNumber + i) % 7];
                     console.log(dayName);//Le Nom du jour
-    
+                    
                     displayWeatherDay(meteo, dayName)
+                    // console.log(chooseDay()); 
+
    
                 }
 

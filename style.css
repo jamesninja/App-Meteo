@@ -1,23 +1,44 @@
-body{
-background-color: aqua; /* centrer le texte */
-text-align: center;  /* centrer le texte */
-
+body {
+  background-color: aqua; /* centrer le texte */
+  text-align: center;
 }
 
+h1 {
+  font-size: 5em;
+  color: antiquewhite;
+}
 
 #previsions {
-    display: flex;
-    align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-h3{
-    width: 100%;
-    font-size: 2.5em;
-    font-weight: bold;
+h3 {
+  display: flex;
+  width: 100%;
+  font-size: 2.5em;
+  font-weight: bold;
 }
- 
 
-img{
-    width: 10%;
-    height: 10%;
- }
+/* img {
+  max-width: 20%;
+  max-height: 20%;
+  object-fit: contain;
+} */
+
+::placeholder {
+  color: rgb(62, 62, 66);
+  font-size: 1em;
+}
+
+/* input::placeholder {
+        color: red;
+    } */
+
+.leJour {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+}
