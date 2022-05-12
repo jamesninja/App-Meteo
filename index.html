@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Weather App</title>
+    <script src="./app.js"></script>
+    <!-- balise qui charge le ficher js-->
   </head>
   <body>
     <header>
@@ -15,21 +16,33 @@
     <div class="form-city">
       <input type="text" id="city" placeholder="city" required />
 
-      <button class="valider" onclick="weather()">Submit</button>
+      <form action="">
+        <select>
+          <option value="1">1 jour</option>
+          <option value="2">2 jours</option>
+          <option value="3">3 jours</option>
+          <option value="4">4 jours</option>
+          <option value="5">5 jours</option>
+          <option value="6">6 jours</option>
+          <option value="7">7 jours</option>
+        </select>
+      </form>
+
+      <button id="searchButton">Submit</button>
       <!-- chaque onclick doit utiliser la fonction weather() -->
     </div>
+
 
     <div id="previsions">
         
     </div>
+
+    
 
     <!-- <img src="images/clouds.svg">
         <img src="images/cloudy.svg">
         <img src="images/rain.svg">
         <img src="images/snow.svg">
         <img src="images/sun.svg"> -->
-
-        <script src="./app.js"></script>
-        <!-- balise qui charge le ficher js-->
   </body>
 </html>
