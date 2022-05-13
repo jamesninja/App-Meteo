@@ -1,6 +1,9 @@
 body {
   background-color: aqua; /* centrer le texte */
   text-align: center;
+  /* background-repeat: no-repeat;
+  background: cover;
+  */
 }
 
 h1 {
@@ -45,10 +48,10 @@ h3 {
 
 
 /* .day {
-    background-image: url("https://images.pexels.com/photos/125457/pexels-photo-125457.jpeg?cs=srgb&dl=blue-sky-bright-clouds-125457.jpg&fm=jpg");
+    background-image: "./images/jour.jpg" ;  
     background-size: 100%;
   }
   .night {
-    background-image: url("https://media.treehugger.com/assets/images/2016/06/milkyway.jpg.860x0_q70_crop-scale.jpg");
+    background-image: "./images/jour.jpg" ;
     background-size: 100%;
-  } */
+  }  */

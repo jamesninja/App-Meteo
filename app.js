@@ -13,6 +13,15 @@
 // définition de la fonction qui gere l'affichage ddes jours
 function displayWeatherDay(idMeteo, day) { // meteo correspond à l'id (par ex 300 ou 804 etc...)
     
+//     let uvi = donnee.current.uvi;
+                     
+//     if ( uvi <= 0 ) {
+//       document.body.style.background = "url('./images/jour.jpg')";
+//    } else {
+//       document.body.style.background = "url('./images/nuit.jpg')";
+//    }
+
+
     const eltPrevisions = document.getElementById("previsions")
     let imgSource= "";
     // const monJour = document.getElementById("jour")
@@ -20,7 +29,12 @@ function displayWeatherDay(idMeteo, day) { // meteo correspond à l'id (par ex 3
 
     if (idMeteo >= 200 && idMeteo <=531) {
        //rain = plui 200 =>  531
+    //    if ( uvi <= 0 ){
+    //     imgSource = "./images/rain.svg"  
+    //    }
+
         imgSource = "./images/rain.svg"    
+
     }
     if (idMeteo >= 600 && idMeteo <=781) {
         imgSource = "./images/snow.svg"   
@@ -120,13 +134,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // console.log(donnee.current.uvi);
 
-                     let uvi = donnee.current.uvi;
+                     
 
+                     let uvi = donnee.current.uvi;
+                     
                     if ( uvi <= 0 ) {
-                      document.body.style.background ="#00004b"
-                    } else {
-                        document.body.style.background = "#23d7e2 ";
-                    }
+                      document.body.style.background = "url('./images/nuit.jpg')";
+                      document.body.style.backgroundSize = "cover";
+                    //   document.getElementById("previsions").style.color = "white"
+                      document.getElementById("previsions").style.WebkitFilter = "invert(1)"
+                      document.getElementById("previsions").style.filter = "invert(1)"
+
+
+                   } else {
+                      document.body.style.background = "url('./images/jour.jpg')";
+                      document.body.style.backgroundSize = "cover";
+                   }
+
+
+
+
+
+
+                    // if ( uvi <= 0 ) {
+                    //   document.body.style.background ="#00004b"
+                   // } else {
+                    //   document.body.style.background = "#23d7e2 ";
+                   // }
 
 
                     
@@ -139,7 +173,18 @@ document.addEventListener('DOMContentLoaded', () => {
               
                 
 
-               
+                // if ( uvi <= 0 ) {
+                        
+                    //         document.body.className += " day";
+                    //       } else {
+                    //         document.body.className += " night";
+                    //       }
+
+
+
+
+
+
 
 
 
