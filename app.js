@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const lon=data.results[0].geometry.lng;
             console.log(lat);
             console.log(lon);
+           
 
             // const API_KEY2 = "d5feee14cc21f117d2a02f17f9c1e44e";
             const API_KEY2 = "1cb10dd4fbab0822aeff02f66612e6bd";//ma clé
@@ -116,12 +117,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     let dayName = week[(dayNumber + i) % 7];
                     console.log(dayName);//Le Nom du jour
+
+                    // console.log(donnee.current.uvi);
+
+                     let uvi = donnee.current.uvi;
+
+                    if ( uvi <= 0 ) {
+                      document.body.style.background ="#00004b"
+                    } else {
+                        document.body.style.background = "#23d7e2 ";
+                    }
+
+
                     
                     displayWeatherDay(meteo, dayName)
                     // console.log(chooseDay()); 
-
    
                 }
+
+
+              
+                
+
+               
+
+
 
                 //console.log("flam flam" +jourJ)
                
@@ -141,6 +161,5 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(err => console.log(err))
     })
 })
-
 
 
